@@ -18,8 +18,10 @@ if ! xcode-select -p >/dev/null 2>&1; then
 fi
 
 # ---- 2. Homebrew ----
+# `</dev/tty` is required when this script is piped from curl — otherwise the
+# Homebrew installer sees a non-TTY stdin and refuses to prompt for sudo.
 if ! command -v brew >/dev/null 2>&1; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/tty
 fi
 
 # Make brew available in this shell (Apple Silicon vs Intel prefix).
