@@ -1,5 +1,5 @@
 # macOS
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/jyrodrigues/macos/main/bootstrap.sh | sh
+/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/jyrodrigues/macos/main/bootstrap.sh)"
 ```
